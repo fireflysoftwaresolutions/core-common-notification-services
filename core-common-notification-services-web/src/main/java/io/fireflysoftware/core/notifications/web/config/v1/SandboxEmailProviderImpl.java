@@ -29,9 +29,9 @@ import java.util.UUID;
  * Accepts an email inside the sandbox and returns a message id.
  * It does not open a socket to a mail provider.
  */
-@Component
+@Component("sandboxEmailProvider")
 @ConditionalOnProperty(name = "firefly.notifications.email.provider", havingValue = "sandbox")
-public class SandboxEmailProvider implements EmailProvider {
+public class SandboxEmailProviderImpl implements EmailProvider {
 
     @Override
     public Mono<EmailResponseDTO> sendEmail(EmailRequestDTO request) {
